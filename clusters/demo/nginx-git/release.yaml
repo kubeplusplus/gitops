@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nginx-git-release
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: ./charts/nginx # The path to your chart at your repository
+      version: "0.1.0" # Your chart version, NOT app version
+      sourceRef:
+        kind: GitRepository
+        name: nginx-git
+        namespace: flux-system
+      interval: 1m
+  values:
+    ingress:
+      enabled: true
+      hosts:
+        - host: nginx-git-release.local
+          paths:
+            - /
