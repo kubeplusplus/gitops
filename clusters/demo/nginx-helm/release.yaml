@@ -18,6 +18,6 @@ spec:
     ingress:
       enabled: true
       hosts:
-        - host: nnginx-helm-release.local
+        - host: nginx-helm-release.local
           paths:
             - /
