@@ -24,4 +24,4 @@ spec:
             claimName: anonymous-sharing-files-volume-claim
       extraVolumeMounts:
         - name: files-storage
-          mountPath: /usr/share/nginx/html
+          mountPath: /app
