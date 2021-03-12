@@ -18,10 +18,10 @@ spec:
     ingress:
       enabled: true
       hostname: anonymous-sharing-files.kubeplusplus.com
-      extraVolumes:
-        - name: files-storage
-          persistentVolumeClaim:
-            claimName: anonymous-sharing-files-volume-claim
-      extraVolumeMounts:
-        - name: files-storage
-          mountPath: /app
+    extraVolumes:
+      - name: files-storage
+        persistentVolumeClaim:
+          claimName: anonymous-sharing-files-volume-claim
+    extraVolumeMounts:
+      - name: files-storage
+        mountPath: /app
