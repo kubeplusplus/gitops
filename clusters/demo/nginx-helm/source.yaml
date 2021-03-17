@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: nginx-helm
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: https://charts.mirantis.com # make sure you change this url to your Helm repository
